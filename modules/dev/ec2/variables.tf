@@ -44,3 +44,9 @@ variable "subnet_id" {
   type        = string
   description = "Subnet ID da rede da instancia."
 }
+
+variable "volume_size" {
+  type        = number
+  default     = 60 //em GiB
+  description = "Espaço em disco do ebs root"
+}
