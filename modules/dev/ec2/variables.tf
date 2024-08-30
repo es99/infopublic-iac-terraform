@@ -31,7 +31,7 @@ variable "key_name" {
 
 variable "iam_role" {
   type        = string
-  default     = "InfopublicEC2-Windows"
+  default     = "INFOPUBLIC_WindowsServersEC2"
   description = "IAM Role em que a instancia assumirá."
 }
 

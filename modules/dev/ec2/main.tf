@@ -14,7 +14,7 @@ resource "aws_instance" "ec2" {
     throughput  = 125             // Optional
 
     tags = {
-      Name = format("dev-%s", var.instance_name)
+      Name = var.instance_name
     }
   }
 
