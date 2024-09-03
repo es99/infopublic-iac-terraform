@@ -20,8 +20,22 @@ resource "aws_instance" "ec2" {
 
   tags = {
     Name          = var.instance_name
-    Environment   = var.environment //(Optional)
+    Environment   = var.environment
     Owner         = var.owner
     MalwareDetect = "True"
+  }
+}
+
+resource "aws_ebs_volume" "disco_extra" {
+  count             = var.extra_disk ? 1 : 0
+  availability_zone = var.environment == "prod" ? "sa-east-1a" : "us-east-2a"
+  size              = var.volume_size
+  type              = "gp3"
+  throughput        = 125
+
+  tags = {
+    Name        = format("bkpdisk-%s", var.instance_name)
+    Environment = var.environment
+    Owner       = var.owner
   }
 }

@@ -14,8 +14,8 @@ variable "instance_name" {
 }
 
 variable "environment" {
-  type    = string
-  default = "dev"
+  type        = string
+  description = "'prod' or 'dev' depending of environment that instance ec2 up."
 }
 
 variable "owner" {
@@ -49,4 +49,10 @@ variable "volume_size" {
   type        = number
   default     = 60 //em GiB
   description = "Espaço em disco do ebs root"
+}
+
+variable "extra_disk" {
+  type        = bool
+  default     = false
+  description = "if true, available extra disk to instance."
 }
