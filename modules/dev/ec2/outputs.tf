@@ -21,11 +21,3 @@ output "block_device_size" {
 output "block_device_type" {
   value = aws_instance.ec2.root_block_device.0.volume_type
 }
-
-output "extra_disk_id" {
-  value = aws_ebs_volume.disco_extra.id
-}
-
-output "extra_disk_size" {
-  value = aws_ebs_volume.disco_extra.size
-}
